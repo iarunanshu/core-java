@@ -1,12 +1,8 @@
-package com.arunanshu.multithreading;
-
-public class Notes {
-    /*
 2.Multithreading and Concurrency in Java:
-    Ways to Create a Thread
-        There are two common ways to define the task that a thread will execute.
-    1. Implementing the Runnable Interface (Preferred Method)
-        How it works: You create a class that implements the Runnable interface. The code you want the thread to execute goes inside the run() method. To start it, you create an instance of your Runnable class and pass it to the constructor of a new Thread().
+Ways to Create a Thread
+There are two common ways to define the task that a thread will execute.
+1. Implementing the Runnable Interface (Preferred Method)
+How it works: You create a class that implements the Runnable interface. The code you want the thread to execute goes inside the run() method. To start it, you create an instance of your Runnable class and pass it to the constructor of a new Thread().
 
         Why it's preferred: This approach is more flexible. Since your class is only implementing an interface, it is still free to extend another parent class. This promotes better object-oriented design by separating the task (Runnable) from the execution mechanism (Thread).
 
@@ -52,9 +48,9 @@ public class Notes {
         This mechanism is famously used to solve the Producer-Consumer Problem, where a "producer" thread adds items to a shared queue and must wait() if the queue is full, while a "consumer" thread removes items and must wait() if the queue is empty.
 
 3.Multithreading and Concurrency in Java
-        Producer-Consumer Problem: The Solution
-        This section provides a solution to the classic Producer-Consumer problem, where producer and consumer threads share a fixed-size queue.
-        The Goal: The producer must wait if the queue is full, and the consumer must wait if it is empty.
+Producer-Consumer Problem: The Solution
+This section provides a solution to the classic Producer-Consumer problem, where producer and consumer threads share a fixed-size queue.
+The Goal: The producer must wait if the queue is full, and the consumer must wait if it is empty.
 
         The Implementation:
 
@@ -96,8 +92,8 @@ public class Notes {
         Common Examples: The Garbage Collector, auto-save features in an editor, and background logging services are often implemented as daemon threads.
 
 4.Locks and Condition | Java Multithreading
-        ## The Problem with synchronized
-        The synchronized keyword works by placing a monitor lock on a specific object instance. This is effective if all threads are competing for a resource through the same object. However, if different threads create different instances of an object, each thread will lock its own instance, and mutual exclusion for a critical section of code will fail. Advanced locks solve this by decoupling the lock from any specific object.
+## The Problem with synchronized
+The synchronized keyword works by placing a monitor lock on a specific object instance. This is effective if all threads are competing for a resource through the same object. However, if different threads create different instances of an object, each thread will lock its own instance, and mutual exclusion for a critical section of code will fail. Advanced locks solve this by decoupling the lock from any specific object.
 
         ## Advanced Lock Types
         1. ReentrantLock
@@ -152,8 +148,8 @@ public class Notes {
         This allows for the same powerful producer-consumer communication patterns but with the added flexibility of the advanced Lock implementations.
 
 5.Lock-Free Concurrency | Compare-and-Swap:
-        ## Lock-Free Concurrency: The Compare-and-Swap (CAS) Operation
-        While locks (synchronized, ReentrantLock) are powerful, they can introduce overhead. For certain simple operations, a faster, lock-free approach is possible using a hardware-level instruction called Compare-and-Swap (CAS).
+## Lock-Free Concurrency: The Compare-and-Swap (CAS) Operation
+While locks (synchronized, ReentrantLock) are powerful, they can introduce overhead. For certain simple operations, a faster, lock-free approach is possible using a hardware-level instruction called Compare-and-Swap (CAS).
 
         How CAS Works
         CAS is an atomic operation that takes three arguments: a memory location (V), an expected old value (A), and a new value (B). It works like this:
@@ -195,5 +191,3 @@ In short, volatile makes sure you see the latest value, while AtomicInteger make
 
         ## Concurrent Collections
         Java provides a rich set of thread-safe collections in the java.util.concurrent package (e.g., ConcurrentHashMap, PriorityBlockingQueue). These collections use the same advanced concurrency mechanisms internally. Some, like PriorityBlockingQueue, use explicit locks (ReentrantLock), while others, like ConcurrentLinkedQueue, use lock-free CAS operations for maximum performance.
-     */
-}
