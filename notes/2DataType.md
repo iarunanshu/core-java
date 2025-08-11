@@ -4,6 +4,9 @@ Case Styles in Programming
     PascalCase (or UpperCamelCase): MyClassName (common for class names)
     snake_case: my_variable_name (common in other languages)
     SCREAMING_SNAKE_CASE: MY_CONSTANT (common for constants)
+    byte->short->char->int->long->float->double
+    Importance of l literal
+    Overflow and underflow
 
 Java has four integer primitive data types for whole numbers:
     byte: 8-bit
@@ -16,6 +19,10 @@ Java has two floating-point primitive data types for numbers with decimal points
     double: 64-bit (double-precision, more commonly used for accuracy)
 
 Type Casting in Java & Implicit and Explicit Casting
+To compare two floating number dont use == instead &gt, &lt because java uses binary floating
+Typecasting (widening casting) (narrowing casting)
+For narrowing down syntax is int x=(x) y   y is  a double number
+
 Type casting is the process of converting a value from one data type to another.
     Implicit Casting (Widening Conversion): Automatic conversion from a smaller data type to a larger one (e.g., int to long). No data loss.
     Explicit Casting (Narrowing Conversion): Manual conversion from a larger data type to a smaller one. Requires a cast operator (dataType) and may result in data loss or precision loss.

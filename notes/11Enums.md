@@ -1,13 +1,3 @@
-You're now looking at **Enums in Java**, a powerful and type-safe way to represent a fixed set of constants\! Here's your concise recap for revision:
-
------
-
-## Enums in Java
-
-This section explores Java's `enum` keyword, providing a robust and type-safe alternative to traditional constant declarations, enabling more expressive and reliable code.
-
------
-
 ## Introduction to Enums
 
 An **Enum (Enumeration)** is a special kind of class that represents a fixed set of named constants. It's used when you have a collection of items that will not change (e.g., days of the week, months of the year, cardinal directions, traffic light colors).
@@ -29,15 +19,9 @@ Before enums, developers often used `public static final int` fields for constan
 
 This demo showcased how `enum` eliminates the problems of traditional constants. Instead of integers, you define a fixed set of enum constants directly:
 
-```java
 public enum Day {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
 }
-```
-
-This provides type safety and better readability.
-
------
 
 ## More Details About Enum - Part 1 & 2
 
@@ -108,5 +92,3 @@ This was likely a practical assignment or demo that illustrated how enums can be
 This indicates the conclusion of the section, pointing to where you can find the accompanying source code examples and supplementary materials for this module.
 
 -----
-
-You've now covered Enums, which are a strong feature for defining fixed sets of constants in a type-safe and object-oriented manner. This knowledge is important for writing clean and robust Java code. What's next on your learning journey?
