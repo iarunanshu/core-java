@@ -1,3 +1,44 @@
+### 🔵 What is a Java Interface?
+
+An **interface** in Java is a blueprint of a class that defines a **contract** for its implementing classes. It can contain method signatures, constant fields, and with Java 8 and beyond, it can also include default, static, and even private methods. Interfaces are used to achieve abstraction, support multiple inheritance of behavior, and promote loose coupling in code.
+
+---
+
+### 🏛️ Key Characteristics
+
+* **No Instantiation**: Interfaces cannot be instantiated directly.
+* **Fields**: All fields in an interface are implicitly **`public`**, **`static`**, and **`final`**. They are constants that belong to the interface. You don't have to explicitly write these keywords, but it's good practice.
+    * **Example**: `int MAX_VALUE = 100;` is the same as `public static final int MAX_VALUE = 100;`.
+* **Methods**:
+    * **Abstract Methods**: (implicitly `public abstract`) Methods without a body.
+    * **Default Methods**: (since Java 8) Provide a default implementation.
+    * **Static Methods**: (since Java 8) Belong to the interface itself.
+    * **Private Methods**: (since Java 9) Helper methods for default or static methods.
+
+---
+
+### 🎯 Types of Interfaces
+
+* **Marker Interface**: An empty interface with no methods or fields. Its sole purpose is to "mark" a class with a special capability, which can be checked at runtime (e.g., `Serializable`, `Cloneable`).
+* **Functional Interface**: An interface with **exactly one abstract method**. They are used to enable **lambda expressions** and **method references** in Java 8. They are often annotated with `@FunctionalInterface`.
+
+---
+
+### ⚖️ Interface vs. Class vs. Abstract Class
+
+This table summarizes the key differences:
+
+| Feature | **Class** | **Abstract Class** | **Interface** |
+| :--- | :--- | :--- | :--- |
+| **Instantiation** | Can be instantiated | Cannot be instantiated | Cannot be instantiated |
+| **Methods** | Concrete methods | Concrete & Abstract methods | Abstract, default, static, private methods |
+| **Fields** | Variables & Constants | Variables & Constants | Constants (implicitly `public static final`) |
+| **Constructors** | Yes | Yes (for subclass initialization) | No |
+| **Inheritance** | `extends` one class | `extends` one class | `implements` multiple interfaces |
+| **Accessibility** | Can have any access modifier | Can have any access modifier | All methods implicitly `public` (before Java 9) |
+| **Purpose** | A blueprint for objects | A partial blueprint, provides a common base | Defines a contract, specifies behavior |
+| **Relationship** | Strong "is-a" relationship | Strong "is-a" relationship | "can-do" or "has-a-capability" relationship |
+
 An Interface in Java is a blueprint of a class. It can contain method signatures (abstract methods), constant fields, default methods, static methods, and nested types. 
 
 Interfaces offer several key advantages:

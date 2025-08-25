@@ -54,7 +54,6 @@ Just-In-Time (JIT) Compiler (to convert bytecode into native machine code for be
                 This is the area where Garbage Collection (GC) primarily operates to reclaim memory from unused objects.
 
                 The Heap is logically divided into:
-
                 Young Generation: Where new objects are initially allocated.
                 Eden Space: Most new objects are created here.
                 Survivor Spaces (S0 and S1): Objects that survive initial garbage collections in Eden are moved between these two spaces.

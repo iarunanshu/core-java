@@ -1,5 +1,105 @@
 Inheritance is an OOP principle where one class (the subclass or child class) acquires the properties (fields) and behaviors (methods) of another class (the superclass or parent class). It promotes code reusability and establishes an "is-a" relationship. The theory explained its core
 
+### 🤝 Inheritance and Polymorphism
+
+**Inheritance** is a core OOP principle where a **subclass** inherits the properties and behaviors of a **superclass**, establishing an "**is-a**" relationship (e.g., a `Car` **is a** `Vehicle`). This promotes code reusability. In Java, every class implicitly or explicitly extends the `java.lang.Object` class.
+
+**Polymorphism** ("many forms") allows a superclass reference variable to hold an object of a subclass type. This enables a single method call to perform differently depending on the actual object's type at runtime.
+
+---
+
+### 🔀 Method Overriding vs. Overloading
+
+| Feature | **Method Overriding** | **Method Overloading** |
+| :--- | :--- | :--- |
+| **Concept** | Runtime Polymorphism | Compile-time Polymorphism |
+| **Signature** | Same name, same parameters | Same name, different parameters |
+| **Classes** | Subclass and Superclass | Within the same class |
+| **Purpose** | Provides a specific implementation for an inherited method. | Allows a single method name to handle different data types or numbers of arguments. |
+| **Mechanism** | Dynamic Binding (runtime) | Static Binding (compile-time) |
+
+* **`@Override` Annotation**: Recommended for overriding to ensure the method signature is correct.
+
+---
+
+### ⛓️ Inheritance and Constructors
+
+* Constructors are **not inherited**.
+* When a subclass object is created, the constructors of its superclasses are always called first, starting from the top of the hierarchy.
+* This is managed by the implicit or explicit `super()` call as the first statement in a constructor.
+
+---
+
+### 🔑 `this` and `super` Keywords
+
+* **`this`**: Refers to the **current object**.
+    * `this.fieldName`: Accesses the current object's field.
+    * `this()`: Calls another constructor in the same class (constructor chaining).
+* **`super`**: Refers to the **immediate superclass**.
+    * `super.methodName()`: Calls a method from the superclass.
+    * `super.fieldName`: Accesses a field from the superclass (useful for field hiding).
+    * `super()`: Calls the superclass's constructor (must be the first statement).
+
+---
+
+### ⬇️ Casting and Checks
+
+* **Upcasting**: Casting a subclass object to a superclass reference. This is implicitly safe.
+* **Downcasting**: Explicitly casting a superclass reference to a subclass type. This is **unsafe** and can cause a `ClassCastException` if the object is not a valid subclass instance.
+* **`instanceof` operator**: Used to check if an object is an instance of a particular class or interface before downcasting.
+    * Java 16+ offers pattern matching for `instanceof`, simplifying code and making it safer.
+
+---
+
+### 🔒 Access Modifiers and Inheritance
+
+A subclass inherits:
+
+* All **`public`** and **`protected`** members.
+* **`default`** (package-private) members if both classes are in the same package.
+* **`private`** members are not inherited but can be accessed through public/protected superclass methods.
+
+---
+
+### 🧐 Field and Method Hiding
+
+* **Method Hiding**: Occurs when a **`static`** method in a subclass has the same signature as a static method in the superclass. The subclass's method "hides" the superclass's method. The method called is determined by the reference type.
+* **Field Hiding**: Occurs when a subclass declares a field with the same name as a superclass field. The subclass's field "hides" the superclass's one. The `super` keyword can be used to access the hidden field.
+
+---
+
+### 🌲 Types of Inheritance
+
+Java supports:
+
+* **Single Inheritance**: One superclass.
+* **Multilevel Inheritance**: A class inherits from a class that already inherits from another.
+* **Hierarchical Inheritance**: Multiple classes inherit from a single superclass.
+* **Multiple Inheritance**: Supported only through **interfaces**, not classes, to avoid the "diamond problem."
+
+---
+
+### 🧱 Abstract Classes and Methods
+
+* **Abstract Method**: A method without an implementation, declared with the `abstract` keyword. Subclasses **must** override it.
+  * **Abstract Class**: A class that cannot be instantiated. It can contain both abstract and non-abstract methods. If a class has even one abstract method, it must be declared abstract. It can have zero                       abstract method 
+
+---
+
+### 🚫 The `final` Keyword
+
+The `final` keyword is used to restrict inheritance or modification:
+
+* **`final` variable**: A constant; its value cannot be changed.
+* **`final` method**: Cannot be overridden.
+* **`final` class**: Cannot be extended (no subclasses).
+
+---
+
+### 封 Sealed Classes (Java 17+)
+
+**Sealed Classes** and **Interfaces** restrict which other classes or interfaces can extend or implement them using the `permits` keyword. This provides more control over the inheritance hierarchy, balancing between fully open and fully closed designs.
+
 In Java, every class, directly or indirectly, extends the java.lang.Object class. If a class doesn't explicitly extend another class, it implicitly extends Object. This means all Java classes inherit common methods like equals(), hashCode(), toString(), etc.
 
 is-a & has-a Relationships in Java
